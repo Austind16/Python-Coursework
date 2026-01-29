@@ -18,4 +18,4 @@ def sum_of_list(a):
 
 # function call and printing the result
 print("List is: ", a)
-sum_of_list(a)
+sum_of_list(a) 
