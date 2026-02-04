@@ -1,9 +1,11 @@
 import random
+
 '''
 1 for snake
 0 for gun
 -1 for water
 '''
+
 computer = random.choice([1, -1, 0])
 youstr = input("Enter your choice: ")
 youDict = {"s": 1, "w": -1, "g": 0}
