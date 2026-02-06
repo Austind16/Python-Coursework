@@ -1,11 +1,11 @@
-🎯 Number Guessing Game (Python)
+## 🎯 Number Guessing Game (Python)
 
 This is a simple command-line Number Guessing Game written in Python.
 The program randomly selects a number between 1 and 100, and the player has up to 10 attempts to guess it correctly.
 
 ---
 
-📌 How the Game Works
+## 📌 How the Game Works
 
 1. The program generates a random number n between 1 and 100.
 
@@ -23,7 +23,7 @@ The program randomly selects a number between 1 and 100, and the player has up t
 
 ---
 
-🧠 Features
+## 🧠 Features
 
 - Random number generation using Python’s random module
 
