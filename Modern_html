@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scientific Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #e8ecf3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 25px;
+            width: 350px;
+            border-radius: 15px;
+            box-shadow: 0px 6px 20px rgba(0,0,0,0.15);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 12px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        select {
+            background: #f7f7f7;
+        }
+
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            font-size: 17px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f1f8ff;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+
+    <script>
+        // Auto-hide inputs based on operation
+        function toggleInputs() {
+            const op = document.getElementById("operation").value;
+            const twoNumFields = document.getElementById("two-num");
+            const oneNumField = document.getElementById("one-num");
+
+            if (["add","sub","mul","div","pow","mod"].includes(op)) {
+                twoNumFields.style.display = "block";
+                oneNumField.style.display = "none";
+            } else {
+                twoNumFields.style.display = "none";
+                oneNumField.style.display = "block";
+            }
+        }
+    </script>
+
+</head>
+<body>
+
+<div class="container">
+    <h2>Scientific Calculator</h2>
+
+    <form method="POST">
+
+        <!-- Two-number operations -->
+        <div id="two-num">
+            <input type="number" step="any" name="num1" placeholder="Enter Number 1">
+            <input type="number" step="any" name="num2" placeholder="Enter Number 2">
+        </div>
+
+        <!-- Single-number operations -->
+        <div id="one-num" class="hidden">
+            <input type="number" step="any" name="num" placeholder="Enter Number">
+        </div>
+
+        <select name="operation" id="operation" onchange="toggleInputs()">
+            <option value="add">Addition (+)</option>
+            <option value="sub">Subtraction (-)</option>
+            <option value="mul">Multiplication (*)</option>
+            <option value="div">Division (/)</option>
+            <option value="pow">Power (xⁿ)</option>
+            <option value="mod">Modulus (%)</option>
+            <option value="sin">Sin(x)</option>
+            <option value="cos">Cos(x)</option>
+            <option value="tan">Tan(x)</option>
+            <option value="sqrt">Square Root</option>
+            <option value="log">Log10</option>
+            <option value="fact">Factorial</option>
+        </select>
+
+        <button type="submit">Calculate</button>
+    </form>
+
+    {% if result != None %}
+        <div class="result">Result: {{ result }}</div>
+    {% endif %}
+</div>
+
+<script>
+    // Ensure correct inputs on page load
+    toggleInputs();
+</script>
+
+</body>
+</html>

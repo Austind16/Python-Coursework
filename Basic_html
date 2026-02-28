@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scientific Calculator</title>
+    <style>
+        body{
+            font-family: Arial;
+            margin: 50px;
+            background: #fff;
+        }
+        .box{
+            background: #818181;
+            padding: 20px;
+            width: 300px;
+            border-radius: 10px;
+            margin: auto;
+            box-shadow: 0 0 10px #ccc;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        button {
+            background: black;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class = "box">
+    <h3>Scientific Calculator</h3>
+
+    <form method="post">
+
+        <!-- Two-input numeric fields -->
+        <input type = "number" step="any" name = "num1" placeholder="Enter first number" required>
+        <input type = "number" step="any" name = "num2" placeholder="Enter second number" required>
+
+        <!-- One-input numeric fields -->
+        <input type = "number" step="any" name = "num" placeholder="Enter number (for single operations)">
+
+        <!-- Operation selector -->
+        <select name="operation">
+            <option value="add">Addition (+)</option>
+            <option value="sub">Subtraction (-)</option>
+            <option value="mul">Multiplication (*)</option>
+            <option value="div">Division (/)</option>
+            <option value="pow">Power (xⁿ)</option>
+            <option value="mod">Modulus (%)</option>
+            <option value="sin">sin(x)</option>
+            <option value="cos">cos(x)</option>
+            <option value="tan">tan(x)</option>
+            <option value="sqrt">Square Root</option>
+            <option value="log">Log10</option>
+            <option value="fact">Factorial</option>
+        </select>
+
+        <button type = "submit">Calculate</button>
+    </form>
+</div>
+{% if result is not none %}
+        <h3>Result: {{ result }}</h3>
+    {% endif %}
+</body>
+</html>
