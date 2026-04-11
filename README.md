@@ -55,10 +55,10 @@ All programs are written for learning and practice purposes.
 
 2. Clone this repository:
 
-   git clone https://github.com/your-username/repository-name.git
+   git clone https://github.com/Austind16/Python-Coursework.git
 
 
-3. Run any Python file:
+4. Run any Python file:
 
    python filename.py
 
