@@ -12,7 +12,7 @@ print(c)
 print(d)
 print(e)
 
-print(15//2) # floor division
+print(15//2) # floor division - Gives the quotient in integer form
 
 # Comparison operators
 
@@ -29,6 +29,6 @@ print(a<=b) # Check if smaller than and equal or not
 
 age = 21
 Ind = False
-print(age > 18 and Ind == True) 
-print(age > 18 or Ind == True)
-print(not age > 18)
+print(age > 18 and Ind == True) # AND - Check if both conditions are true
+print(age > 18 or Ind == True) # OR - Check if at least one condition is true
+print(not age > 18) # NOT - Check the opposite of the condition
